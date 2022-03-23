@@ -1,0 +1,24 @@
+
+### GET - all courses
+
+GET http://localhost:9001/api/courses
+x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjNiMDVhNDZkODg0YzQxYzYyM2Y2ZDEiLCJpYXQiOjE2NDgwMzUyMzZ9.NEA_qgIg_QJpDAce7RStTspczSXpRmEgCP0slx3TgNE
+Content-Type: application/json
+
+### GET - a course by Id
+
+GET http://localhost:9001/api/courses/623b06266d884c41c623f6d8
+x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjNiMDVhNDZkODg0YzQxYzYyM2Y2ZDEiLCJpYXQiOjE2NDgwMzUyMzZ9.NEA_qgIg_QJpDAce7RStTspczSXpRmEgCP0slx3TgNE
+Content-Type: application/json
+
+### POST - create a course
+
+POST http://localhost:9001/api/courses
+x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjNiMDVhNDZkODg0YzQxYzYyM2Y2ZDEiLCJpYXQiOjE2NDgwMzUyMzZ9.NEA_qgIg_QJpDAce7RStTspczSXpRmEgCP0slx3TgNE
+Content-Type: application/json
+
+{
+  "name":"Cyber Security"
+}
+
+###
