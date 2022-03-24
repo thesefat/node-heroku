@@ -14,8 +14,7 @@ module.exports = function (app)
 
     app.use(express.json());
     app.use(helmet());
-    if (app.get('env') === 'development')
-        app.use(morgan('tiny'));
+    app.use(morgan('tiny'));
     app.use('/', home);
     app.use('/api/courses', auth, courses);
     app.use('/api/students', students);

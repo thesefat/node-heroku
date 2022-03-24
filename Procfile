@@ -1,1 +1,1 @@
-web: node environment.js
+web: node index.js
