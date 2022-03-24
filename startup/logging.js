@@ -1,7 +1,7 @@
 require('express-async-errors')
 const winston = require('winston')
 require('winston-mongodb');
-const { config } = require('../environments/development')
+const {config} = require('../environments')
 
 module.exports = function ()
 {
@@ -24,6 +24,6 @@ module.exports = function ()
 
     // winston.handle(new winston.transports.File({ filename: 'exceptions.log' }))
     // winston.RejectionHandler(new winston.transports.File({ filename: 'rejections.log' }))
-    winston.add(new winston.transports.MongoDB({ db: config.winstonConnectionString }))
+    winston.add(new winston.transports.MongoDB({db: config().winstonConnectionString}))
 
 }

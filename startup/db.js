@@ -1,15 +1,16 @@
+// noinspection JSVoidFunctionReturnValueUsed
+
 const winston = require("winston");
 const mongoose = require('mongoose');
-const { config } = require('../environments/development')
+const {config} = require('../environments');
 
-module.exports = function ()
-{
-    mongoose.connect(config.connectionString, {
-        dbName: config.databaseName,
-        useNewUrlParser: config.useNewUrlParser,
-        useUnifiedTopology: config.useUnifiedTopology,
-    }).then(() =>
-    {
+module.exports = function () {
+    console.log(config().connectionString)
+    mongoose.connect(config().connectionString, {
+        dbName: config().databaseName,
+        useNewUrlParser: true,
+        useUnifiedTopology: true
+    }).then(() => {
         winston.info('Connected to MongoDB')
     });
 }
