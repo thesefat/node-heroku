@@ -1,20 +1,20 @@
 require('express-async-errors')
 const winston = require('winston')
 require('winston-mongodb');
-const {config} = require('../environments')
+const {config} = require('../config/environment')
 
 module.exports = function ()
 {
 
-    // process.on('uncaughtException', (ex) =>
-    // {
-    //     winston.error(ex.message)
-    // })
+    process.on('uncaughtException', (ex) =>
+    {
+        winston.error(ex.message)
+    })
 
-    // process.on('unhandledRejection', (ex) =>
-    // {
-    //     winston.error(ex.message)
-    // })
+    process.on('unhandledRejection', (ex) =>
+    {
+        winston.error(ex.message)
+    })
 
     winston.add(new winston.transports.File({ filename: 'logfile.log' }));
 

@@ -2,7 +2,7 @@
 
 const winston = require("winston");
 const mongoose = require('mongoose');
-const {config} = require('../environments');
+const {config} = require('../config/environment');
 
 module.exports = function () {
     console.log(config().connectionString)
